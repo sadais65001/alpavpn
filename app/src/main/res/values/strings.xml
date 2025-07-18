@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">Alpa Vpn</string>
+    <string name="app_name">AlpaVPN</string>
+    <string name="connect">Connect</string>
+    <string name="disconnect">Disconnected</string>
 </resources>
