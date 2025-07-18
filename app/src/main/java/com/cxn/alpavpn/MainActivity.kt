@@ -1,6 +1,9 @@
 package com.cxn.alpavpn
 
+import android.graphics.Color
 import android.os.Bundle
+import android.widget.ImageButton
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -15,6 +18,23 @@ class MainActivity : AppCompatActivity() {
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
+        }
+        val vpnStatus = findViewById<TextView>(R.id.vpnStatus)
+        val btnToggle = findViewById<ImageButton>(R.id.btnToggleVPN)
+
+        var isConnected = false
+
+        btnToggle.setOnClickListener {
+            isConnected = !isConnected
+            if (isConnected) {
+                vpnStatus.text = "Connected"
+                vpnStatus.setTextColor(Color.parseColor("#00C853"))
+                // Start VPN logic here
+            } else {
+                vpnStatus.text = "Disconnected"
+                vpnStatus.setTextColor(Color.parseColor("#FF5252"))
+                // Stop VPN logic here
+            }
         }
     }
 }

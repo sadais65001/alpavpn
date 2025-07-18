@@ -1,19 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#101927"
     tools:context=".MainActivity">
 
+    <!-- App Title -->
     <TextView
+        android:id="@+id/appTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:text="AlpaVPN"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp" />
+
+    <!-- VPN Status -->
+    <TextView
+        android:id="@+id/vpnStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Disconnected"
+        android:textSize="16sp"
+        android:textColor="#FF5252"
+        app:layout_constraintTop_toBottomOf="@id/appTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <!-- Circular Connect Button -->
+    <ImageButton
+        android:id="@+id/btnToggleVPN"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:background="@drawable/btn_circle"
+        android:src="@drawable/ic_power"
+        android:scaleType="centerInside"
+        android:tint="#FFFFFF"
+        app:layout_constraintTop_toBottomOf="@id/vpnStatus"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp" />
+
+    <!-- Server Location -->
+    <TextView
+        android:id="@+id/serverLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Server: United States"
+        android:textSize="14sp"
+        android:textColor="#CCCCCC"
+        app:layout_constraintTop_toBottomOf="@id/btnToggleVPN"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp" />
+
+    <!-- Duration -->
+    <TextView
+        android:id="@+id/connectionDuration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Duration: 00:00"
+        android:textSize="14sp"
+        android:textColor="#AAAAAA"
+        app:layout_constraintTop_toBottomOf="@id/serverLocation"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
